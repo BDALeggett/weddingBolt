@@ -1,0 +1,101 @@
+/* Card.css — v2025-05-31
+   -------------------------------------------------------- */
+.shiny-card { --tz: 0px; }
+
+.shiny-card {
+  --rx:   0deg;
+  --ry:   0deg;
+  --scl:  1;
+  transform: scale(var(--scl)) rotateX(var(--rx)) rotateY(var(--ry));
+  transform-style: preserve-3d;
+  perspective: 800px;
+
+  /* dynamic floor shadow */
+  box-shadow:
+    var(--sx, 0px) var(--sy, 0px) var(--sblur, 32px)
+    rgba(0,0,0,var(--sopa,0.35));
+
+  transition:
+    transform 0.8s ease-out,
+    box-shadow 0.8s ease-out;
+
+  border-radius: 16px;
+  cursor: pointer;
+  position: relative;
+  /* touch-action: none;      */
+}
+
+/* inertia */
+.shiny-card.inertia {
+  transition:
+    transform 0.8s cubic-bezier(.22,.61,.36,1),
+    box-shadow 0.8s cubic-bezier(.22,.61,.36,1);
+}
+
+/* focused */
+.shiny-card.focused {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform:
+    translate(-50%, -50%)
+    rotateX(var(--rx)) rotateY(var(--ry)) translateZ(var(--tz, 0px));
+  z-index: 10;
+  animation: transform 0.3s cubic-bezier(.34,1.56,.64,1) both;
+  touch-action: none;
+}
+
+/* Base artwork */
+.card-img {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+}
+
+/* Shine stack */
+.shine,
+.foil-layer,
+.foil-matte,
+.highlight,
+.sparkles,
+.holo-logo {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+.shine        { overflow: hidden; z-index: 1; }
+
+.foil-layer   {
+  opacity: 0.2;                    /* REST_OPACITY synced with JS */
+  mix-blend-mode: screen;
+  transition: opacity 0.25s ease-out;
+  background-size: cover;
+  background-position: center;
+}
+
+.foil-matte   { z-index: 2; background-size: cover; }
+
+.highlight    { z-index: 3; mix-blend-mode: screen; transition: background 0.15s ease-out, opacity 0.15s ease-out; }
+
+.sparkles     { z-index: 3; opacity: 0.06; background-size: cover; }
+
+.holo-logo    {
+  z-index: 4;
+  width: 80%;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.4;
+  transition: opacity 0.2s ease;
+}
+
+/* Page-darkening overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 5;
+}

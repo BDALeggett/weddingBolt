@@ -10,13 +10,13 @@ const AnimatedHeadline = ({
   const startTimeRef = useRef(null);
   
   // Random character pool (A-Z, 0-9)
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  const chars = 'HUSKIES';
   
   // Vibrant gradient colors for flash effect
   const flashColors = [
-    'from-cyan-400 to-blue-500',
-    'from-pink-400 to-purple-500', 
-    'from-yellow-400 to-orange-500'
+    'from-grey-400 to-green-500',
+    'from-green-400 to-white-500', 
+    'from-white-400 to-grey-500'
   ];
   
   const getRandomChar = () => chars[Math.floor(Math.random() * chars.length)];
@@ -35,7 +35,7 @@ const AnimatedHeadline = ({
       }
       
       const elapsed = timestamp - startTimeRef.current;
-      const totalDuration = 1500; // 1.5 seconds total
+      const totalDuration = 2200; // 1.5 seconds total
       const progress = Math.min(elapsed / totalDuration, 1);
       
       // Calculate how many characters should be "revealed" based on progress

@@ -64,8 +64,8 @@ export default function CalendarModal({
                   whileHover={{ scale: 1.02 }}
                   whileTap={{  scale: 0.98 }}
                 >
-                  <Download size={18} />
-                  Download .ics file
+                  <Calendar size={18} />
+                  Save the Date!!!
                 </motion.button>
 
                 {(platform === "ios" || platform === "android") && (
@@ -76,7 +76,7 @@ export default function CalendarModal({
                     whileTap={{  scale: 0.98 }}
                   >
                     <Calendar size={18} />
-                    Open Native Calendar
+                    View My Calendar
                   </motion.button>
                 )}
               </div>

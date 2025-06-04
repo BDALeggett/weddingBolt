@@ -1,6 +1,6 @@
 // src/components/ActionsBar.jsx
 import { motion } from "framer-motion";
-import { Calendar, MessageSquare, Droplets, Phone } from "lucide-react";
+import { Calendar, MessageSquare, PackageOpen, Phone } from "lucide-react";
 
 import { useRsvpModal }     from "@/hooks/useRsvpModal";
 import { useCalendarModal } from "@/hooks/useCalendarModal";
@@ -55,25 +55,25 @@ export default function ActionsBar() {
       icon: MessageSquare,
       onClick: openRsvp,
       className:
-        "w-full max-w-[400px] mx-auto bg-[#f5f5dc] hover:bg-[#e5e5c5] text-[#black] hover:text-black rounded-full py-4 md:py-6 flex items-center justify-between px-6 md:px-8 transition-all",
+        "w-full max-w-[400px] mx-auto bg-[#f5f5dc] hover:bg-[#e5e5c5] text-black hover:text-black rounded-full py-4 md:py-6 flex items-center justify-between px-6 md:px-8 transition-all",
     },
     {
       id: "calendar",
-      label: "Add to Calendar",
+      label: "Save the Date",
       icon: Calendar,
       onClick: openCal,
       className:
         defaultClassName},
     {
       id: "dropbox",
-      label: "Dropbox (Countdown)",
-      icon: Droplets,
+      label: "Photo Dropbox",
+      icon: PackageOpen,
       onClick: openDropbox,
       className:
         defaultClassName},
     {
       id: "sms",
-      label: "SMS Updates",
+      label: "Live Event Updates",
       icon: Phone,
       onClick: openSms,
       className:

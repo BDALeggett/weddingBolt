@@ -47,7 +47,7 @@ export default function ActionsBar() {
   const { open: openSms } = sms;
 
   /* ---------- button defs ---------- */
-  const defaultClassName ="w-full bg-[#242526a1] hover:bg-[#242526] rounded-full border-[3px] border-[#f5f5dc] py-4 md:py-6 flex items-center justify-between px-6 md:px-8 transition-all";
+  const defaultClassName ="w-full text-white bg-[#242526a1] hover:bg-[#242526] rounded-full border-[3px] border-[#f5f5dc] py-4 md:py-6 flex items-center justify-between px-6 md:px-8 transition-all";
   const buttons = [
     {
       id: "rsvp",
@@ -55,7 +55,7 @@ export default function ActionsBar() {
       icon: MessageSquare,
       onClick: openRsvp,
       className:
-        "w-full max-w-[400px] mx-auto bg-[#f5f5dc] hover:bg-[#e5e5c5] text-black hover:text-black rounded-full py-4 md:py-6 flex items-center justify-between px-6 md:px-8 transition-all",
+        "w-full max-w-[400px] mx-auto bg-[#f5f5dc] hover:bg-[#e5e5c5] color-black hover:text-black rounded-full py-4 md:py-6 flex items-center justify-between px-6 md:px-8 transition-all",
     },
     {
       id: "calendar",
@@ -93,7 +93,7 @@ export default function ActionsBar() {
                 key={btn.id}
                 onClick={btn.onClick}
                 className={`
-                  flex items-center justify-center gap-3 px-6 py-4 rounded-xl text-white font-semibold
+                  flex items-center justify-center gap-3 px-6 py-4 rounded-xl font-semibold
                   transition-all duration-100 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-300/50
                   min-w-[200px] sm:min-w-[160px] ${btn.className}
                 `}
